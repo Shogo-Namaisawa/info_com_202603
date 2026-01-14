@@ -1,4 +1,5 @@
 from otree.api import *
+import time
 
 
 doc = """
@@ -7,9 +8,11 @@ Your app description
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'dictator'
-    PLAYERS_PER_GROUP = None
-    NUM_ROUNDS = 1
+    NAME_IN_URL = 'dicator_trial'
+    PLAYERS_PER_GROUP = None   #1人で行う
+    NUM_ROUNDS = 1  #1ラウンド
+    ENDOWMENT = cu(10)  #初期保有額10
+    
 
 
 class Subsession(BaseSubsession):
@@ -21,20 +24,38 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    # 半角数字入力形式（0〜ENDOWMENTまで）
+    proposal = models.IntegerField(
+        min=0,
+        max=10,
+        label='プレイヤー2に渡す金額を入力してください（0〜10）'
+    )
 
+
+def compute(player: Player):
+    # プレイヤーは必ず贈与者側
+    # payoffは 初期保有額 - 分配額
+    player.payoff = C.ENDOWMENT - player.proposal
 
 # PAGES
-class MyPage(Page):
+class Page1_d(Page):
+    pass
+
+class Page2_d(Page):
+    form_model = 'player'
+    form_fields = ['proposal']
+
+class AlibiWaitPage(WaitPage):
+    wait_for_all_groups = False
+    
+    @staticmethod
+    def after_all_players_arrive(group: Group):
+        time.sleep(1)  # 1秒待機
+        for player in group.get_players():
+            compute(player)
+
+class Page3_d(Page):
     pass
 
 
-class ResultsWaitPage(WaitPage):
-    pass
-
-
-class Results(Page):
-    pass
-
-
-page_sequence = [MyPage, ResultsWaitPage, Results]
+page_sequence = [Page1_d, Page2_d, AlibiWaitPage, Page3_d]

@@ -1,0 +1,68 @@
+{{ block title }}
+    説明
+{{ endblock }}
+{{ block content }}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            <h2><strong>独裁者ゲームの説明</strong></h2>
+        </div>
+        <div class="card-body">
+            <p>
+                これは独裁者ゲームです。<br>
+                このゲームではプレイヤー1とプレイヤー2に割り振られます。<br>
+                それぞれの役割は以下のとおりです。
+            </p>
+            <div>
+                <b>プレイヤー1に割り振られた場合</b>
+                <p>
+                    あなたは最小に{{C.ENDOWMENT}}を持っています<br>
+                    その中からプレイヤー2にいくら渡すか決めてもらいます。<br>
+                    プレイヤー2には拒否権はありません。したがってプレイヤー1の決定通りに分配が行われます。
+                </p>
+
+                <b>プレイヤー2に割り振られた場合</b>
+                <p>
+                    プレイヤー2はプレイヤー1が決めたポイントを受け取ります
+                </p>
+            </div>
+            
+            <div class="text-center mt-4">
+                {{ next_button }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: #003366 !important;
+    color: white !important;
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.card-header * {
+    color: white !important;
+}
+
+.btn-primary {
+    padding: 0.875rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
+}
+</style>
+{{ endblock }}
