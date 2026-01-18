@@ -1,0 +1,84 @@
+{{ block title }}
+    説明
+{{ endblock }}
+{{ block content }}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            <h2><strong>最後通牒ゲームの説明【対AI】</strong></h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning">
+                <b>このゲームでは、相手（提案者）は「{{ C.OPPONENT_TYPE }}」です。</b>
+            </div>
+            <p>
+                これは最後通牒ゲームです。<br>
+                このゲームでは提案者（プレイヤー1）と応答者（プレイヤー2）の2つの役割があります。
+            </p>
+            <div>
+                <b>提案者（プレイヤー1）の役割</b>
+                <p>
+                    提案者は最初に<b>{{C.ENDOWMENT}}ポイント</b>を持っています。<br>
+                    その中から応答者にいくら渡すか（0〜{{C.ENDOWMENT}}ポイント）を提案します。
+                </p>
+
+                <b>応答者（プレイヤー2）の役割</b>
+                <p>
+                    応答者は提案者の提案を「受諾する」か「拒否する」かを決定します。<br>
+                    <ul>
+                        <li><b>受諾した場合</b>：提案どおりに分配が行われます。</li>
+                        <li><b>拒否した場合</b>：両者とも0ポイントになります。</li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="alert alert-warning mt-3">
+                <b>あなたの役割</b><br>
+                今回、あなたは<b>応答者（プレイヤー2）</b>の役割を担当します。<br><br>
+                次のページでは、あなたが受諾する<b>「最低の金額（MAO: Minimum Acceptable Offer）」</b>を入力していただきます。<br><br>
+                <ul>
+                    <li>提案者は0〜{{C.ENDOWMENT}}の間で分け前を提案してきます。</li>
+                    <li>もし提案額があなたの入力した最低金額<b>以上</b>であれば、提案通りの配分となります。</li>
+                    <li>もし提案額があなたの入力した最低金額<b>未満</b>であれば、両者とも0ポイントになります。</li>
+                </ul>
+            </div>
+            
+            <div class="text-center mt-4">
+                {{ next_button }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: #003366 !important;
+    color: white !important;
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.card-header * {
+    color: white !important;
+}
+
+.btn-primary {
+    padding: 0.875rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
+}
+</style>
+{{ endblock }}

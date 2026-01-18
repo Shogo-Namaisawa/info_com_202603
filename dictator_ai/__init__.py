@@ -3,16 +3,17 @@ import time
 
 
 doc = """
-Your app description
+独裁者ゲーム（対AI）
+相手はAIであることを想定したゲームです。
 """
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'dicator_trial'
-    PLAYERS_PER_GROUP = None   #1人で行う
-    NUM_ROUNDS = 1  #1ラウンド
-    ENDOWMENT = cu(20)  #初期保有額20
-    
+    NAME_IN_URL = 'dictator_ai'
+    PLAYERS_PER_GROUP = None   # 1人で行う
+    NUM_ROUNDS = 1  # 1ラウンド
+    ENDOWMENT = cu(20)  # 初期保有額20
+    OPPONENT_TYPE = 'AI'  # 相手のタイプ
 
 
 class Subsession(BaseSubsession):
@@ -37,13 +38,16 @@ def compute(player: Player):
     # payoffは 初期保有額 - 分配額
     player.payoff = C.ENDOWMENT - player.proposal
 
+
 # PAGES
 class Page1_d(Page):
     pass
 
+
 class Page2_d(Page):
     form_model = 'player'
     form_fields = ['proposal']
+
 
 class AlibiWaitPage(WaitPage):
     wait_for_all_groups = False
@@ -53,6 +57,7 @@ class AlibiWaitPage(WaitPage):
         time.sleep(1)  # 1秒待機
         for player in group.get_players():
             compute(player)
+
 
 class Page3_d(Page):
     pass

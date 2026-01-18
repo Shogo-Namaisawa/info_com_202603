@@ -1,0 +1,72 @@
+{{ block title }}
+    回答の確認
+{{ endblock }}
+
+{{ block content }}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            <h2><strong>回答の確認【対人間】</strong></h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-info">
+                <b>相手（提案者）は「{{ C.OPPONENT_TYPE }}」です。</b>
+            </div>
+            <p>
+                あなたの回答が記録されました。
+            </p>
+            
+            <p>
+                <b>あなたが設定した最低受諾額（MAO）：</b>{{ player.mao }} ポイント
+            </p>
+            
+            <p>
+                これは以下を意味します：<br>
+                ・受諾する提案：{{ player.mao }}ポイント以上（{{ player.mao }}〜{{ C.ENDOWMENT }}ポイント）<br>
+                ・拒否する提案：{{ player.mao }}ポイント未満（0〜{{ mao_minus_1 }}ポイント）
+            </p>
+            
+            <p class="text-muted">
+                次のページでは、提案者の提案額がランダムに決定され、<br>
+                あなたの最低受諾額に基づいて結果が計算されます。
+            </p>
+            
+            <div class="text-center mt-4">
+                {{ next_button }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: #003366 !important;
+    color: white !important;
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.card-header * {
+    color: white !important;
+}
+
+.btn-primary {
+    padding: 0.875rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
+}
+</style>
+{{ endblock }}

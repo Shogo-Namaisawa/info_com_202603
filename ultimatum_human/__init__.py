@@ -3,16 +3,18 @@ import random
 
 
 doc = """
-最後通牒ゲーム（MAO方式）
+最後通牒ゲーム（対人間・MAO方式）
 応答者として、受諾する「最低金額（Minimum Acceptable Offer）」を事前に入力します。
+相手は人間であることを想定したゲームです。
 """
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'ultimatum'
+    NAME_IN_URL = 'ultimatum_human'
     PLAYERS_PER_GROUP = None  # 1人で行う
     NUM_ROUNDS = 1  # 1ラウンド
     ENDOWMENT = 20  # 初期保有額20ポイント
+    OPPONENT_TYPE = '人間'  # 相手のタイプ
 
 
 class Subsession(BaseSubsession):
@@ -26,7 +28,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     # MAO（最低受諾額）
     mao = models.IntegerField(
-        label='受諾する最低金額（0〜10の整数）',
+        label='受諾する最低金額（0〜20の整数）',
         min=0,
         max=C.ENDOWMENT
     )

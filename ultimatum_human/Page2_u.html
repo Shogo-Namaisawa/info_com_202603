@@ -6,9 +6,12 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>最低受諾額（MAO）の入力</strong></h2>
+            <h2><strong>最低受諾額（MAO）の入力【対人間】</strong></h2>
         </div>
         <div class="card-body">
+            <div class="alert alert-info">
+                <b>相手（提案者）は「{{ C.OPPONENT_TYPE }}」です。</b>
+            </div>
             <p>
                 あなたは<b>応答者（プレイヤー2）</b>です。<br>
                 提案者（プレイヤー1）は<b>{{C.ENDOWMENT}}ポイント</b>を持っており、そのうちいくらかをあなたに渡すことを提案します。

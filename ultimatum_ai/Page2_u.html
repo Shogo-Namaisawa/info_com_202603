@@ -1,0 +1,73 @@
+{{ block title }}
+    最低受諾額の入力
+{{ endblock }}
+
+{{ block content }}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            <h2><strong>最低受諾額（MAO）の入力【対AI】</strong></h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning">
+                <b>相手（提案者）は「{{ C.OPPONENT_TYPE }}」です。</b>
+            </div>
+            <p>
+                あなたは<b>応答者（プレイヤー2）</b>です。<br>
+                提案者（プレイヤー1）は<b>{{C.ENDOWMENT}}ポイント</b>を持っており、そのうちいくらかをあなたに渡すことを提案します。
+            </p>
+            
+            <p>
+                <b>あなたが受諾する「最低の金額」を入力してください。</b><br>
+                もし提案額があなたの入力した額<b>以上</b>であれば、提案通りの配分となります。<br>
+                もし提案額があなたの入力した額<b>未満</b>であれば、両者とも0ポイントになります。
+            </p>
+            
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    {{ formfields }}
+                </div>
+            </div>
+            <p class="text-muted text-center mt-2">
+                <small>例：「3」と入力した場合、提案額が3ポイント以上なら受諾、2ポイント以下なら拒否となります。</small>
+            </p>
+            
+            <div class="text-center mt-4">
+                {{ next_button }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: #003366 !important;
+    color: white !important;
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.card-header * {
+    color: white !important;
+}
+
+.btn-primary {
+    padding: 0.875rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
+}
+</style>
+{{ endblock }}

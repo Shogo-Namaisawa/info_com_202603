@@ -4,13 +4,13 @@ SESSION_CONFIGS = [
     dict(
         name='former_game_sequence',
         display_name='Former Game Sequence',
-        app_sequence=['instruction', 'demographics', 'bigfive', 'dictator', 'ultimatum', 'closing'],
+        app_sequence=['instruction', 'demographics', 'bigfive', 'dictator_human', 'dictator_ai', 'ultimatum_human', 'ultimatum_ai', 'closing'],
         num_demo_participants=1,
     ),
     dict(
         name='latter_game_sequence',
         display_name='Latter Game Sequence',
-        app_sequence=['instruction', 'demographics', 'dictator', 'ultimatum', 'bigfive', 'closing'],
+        app_sequence=['instruction', 'demographics', 'dictator_human', 'dictator_ai', 'ultimatum_human', 'ultimatum_ai', 'bigfive', 'closing'],
         num_demo_participants=1,
     ),
 ]
@@ -29,10 +29,10 @@ SESSION_FIELDS = []
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'ja'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'JPY'
 USE_POINTS = True
 
 ADMIN_USERNAME = 'admin'

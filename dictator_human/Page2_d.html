@@ -1,22 +1,25 @@
 {{ block title }}
-    結果の確認
+    分配額の決定
 {{ endblock }}
 
 {{ block content }}
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>結果の確認</strong></h2>
+            <h2><strong>分配額の決定【対人間】</strong></h2>
         </div>
         <div class="card-body">
+            <div class="alert alert-info">
+                <b>相手は「{{ C.OPPONENT_TYPE }}」です。</b>
+            </div>
             <p>
-                プレイヤー1に対して初期保有額として<b>{{C.ENDOWMENT}}</b>が渡されました。<br>
-                プレイヤー1はプレイヤー2に対して<b>{{player.proposal}} points</b>を渡すこととしました。<br>
+                あなたは<b>プレイヤー1</b>に割り振られました。
             </p>
-
-            <p>
-                その結果、あなたは<b>{{player.payoff}}</b>を獲得しました。
-            </p>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    {{ formfields }}
+                </div>
+            </div>
             <div class="text-center mt-4">
                 {{ next_button }}
             </div>
@@ -56,5 +59,3 @@
 }
 </style>
 {{ endblock }}
-
-
