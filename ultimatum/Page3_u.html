@@ -1,22 +1,33 @@
 {{ block title }}
-    結果の確認
+    回答の確認
 {{ endblock }}
 
 {{ block content }}
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>結果の確認</strong></h2>
+            <h2><strong>回答の確認</strong></h2>
         </div>
         <div class="card-body">
             <p>
-                プレイヤー1に対して初期保有額として<b>{{C.ENDOWMENT}}</b>が渡されました。<br>
-                プレイヤー1はプレイヤー2に対して<b>{{player.proposal}} points</b>を渡すこととしました。<br>
+                あなたの回答が記録されました。
             </p>
-
+            
             <p>
-                その結果、あなたは<b>{{player.payoff}}</b>を獲得しました。
+                <b>あなたが設定した最低受諾額（MAO）：</b>{{ player.mao }} ポイント
             </p>
+            
+            <p>
+                これは以下を意味します：<br>
+                ・受諾する提案：{{ player.mao }}ポイント以上（{{ player.mao }}〜{{ C.ENDOWMENT }}ポイント）<br>
+                ・拒否する提案：{{ player.mao }}ポイント未満（0〜{{ mao_minus_1 }}ポイント）
+            </p>
+            
+            <p class="text-muted">
+                次のページでは、提案者の提案額がランダムに決定され、<br>
+                あなたの最低受諾額に基づいて結果が計算されます。
+            </p>
+            
             <div class="text-center mt-4">
                 {{ next_button }}
             </div>
@@ -56,5 +67,3 @@
 }
 </style>
 {{ endblock }}
-
-

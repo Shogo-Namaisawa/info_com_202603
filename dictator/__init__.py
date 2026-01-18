@@ -11,7 +11,7 @@ class C(BaseConstants):
     NAME_IN_URL = 'dicator_trial'
     PLAYERS_PER_GROUP = None   #1人で行う
     NUM_ROUNDS = 1  #1ラウンド
-    ENDOWMENT = cu(10)  #初期保有額10
+    ENDOWMENT = cu(20)  #初期保有額20
     
 
 
@@ -27,8 +27,8 @@ class Player(BasePlayer):
     # 半角数字入力形式（0〜ENDOWMENTまで）
     proposal = models.IntegerField(
         min=0,
-        max=10,
-        label='プレイヤー2に渡す金額を入力してください（0〜10）'
+        max=20,
+        label='プレイヤー2に渡す金額を入力してください（0〜20）'
     )
 
 
