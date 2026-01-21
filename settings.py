@@ -1,4 +1,5 @@
 from os import environ
+import dj_database_url
 
 SESSION_CONFIGS = [
     dict(
@@ -42,3 +43,16 @@ ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 DEMO_PAGE_INTRO_HTML = """ """
 
 SECRET_KEY = '9433999788057'
+
+# データベース設定（環境変数があればPostgreSQL、なければSQLiteを使う設定）
+if environ.get('DATABASE_URL'):
+    DATABASES = {
+        'default': dj_database_url.config(default=environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
+        }
+    }
