@@ -44,15 +44,16 @@ DEMO_PAGE_INTRO_HTML = """ """
 
 SECRET_KEY = '9433999788057'
 
-# データベース設定（環境変数があればPostgreSQL、なければSQLiteを使う設定）
-if environ.get('DATABASE_URL'):
-    DATABASES = {
-        'default': dj_database_url.config(default=environ.get('DATABASE_URL'))
+# データベース設定（PostgreSQL)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'otree_db',      # ステップ1でつけた名前
+        'USER': 'postgres',      # pgAdmin接続時のユーザー名
+        'PASSWORD': 'ange0827',          # Postgres.appなら空欄で動くことが多いですが、設定していればそのパスワード
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'db.sqlite3',
-        }
-    }
+}
+
+# settings.py の一番下の行に追加
