@@ -1,0 +1,78 @@
+{{ block title }}
+    理解度確認
+{{ endblock }}
+
+{{ block content }}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            <h2><strong>理解度確認</strong></h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i>
+                <b>これはあなたの理解を確認するための質問です。</b><br>
+                <small>※ 誤答によるペナルティはありません。内容を正しく理解して実験に参加していただくための確認です。</small>
+            </div>
+
+            <div class="question-box mt-4 p-4 border rounded">
+                <h5 class="mb-3"><strong>確認問題：</strong></h5>
+                <p class="lead">
+                    あなたが<b>プレイヤー2（応答者）</b>で、<b>相手の提案を受け入れる（受諾する）最低のポイントを10ポイント</b>に設定しているとします。<br>
+                    プレイヤー1から<b>8ポイント</b>の提案を受けた場合、<u>この提案は受諾されますか、拒否されますか？</u>
+                </p>
+
+                <div class="mt-4">
+                    {{ formfields }}
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                {{ next_button }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: #003366 !important;
+    color: white !important;
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.card-header * {
+    color: white !important;
+}
+
+.question-box {
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6 !important;
+}
+
+.question-box .lead {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.btn-primary {
+    padding: 0.875rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
+}
+</style>
+{{ endblock }}

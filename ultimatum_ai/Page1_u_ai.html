@@ -5,11 +5,13 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>最後通牒ゲームの説明【対AI】</strong></h2>
+            <h2><strong>最後通牒ゲームの説明</strong></h2>
         </div>
         <div class="card-body">
             <div class="alert alert-warning">
-                <b>このゲームでは、相手（提案者）は「{{ C.OPPONENT_TYPE }}」です。</b>
+                <b>このゲームでは、あなたの相手は「AIエージェント」または「人間」のどちらかです。</b><br>
+                <small>※実際にどちらが相手なのかは、後のページで明らかになります。</small><br>
+                <b>この実験の結果は本タスクの報酬に結びつきます。</b>
             </div>
             <p>
                 これは最後通牒ゲームです。<br>
@@ -30,17 +32,6 @@
                         <li><b>拒否した場合</b>：両者とも0ポイントになります。</li>
                     </ul>
                 </p>
-            </div>
-            
-            <div class="alert alert-warning mt-3">
-                <b>あなたの役割</b><br>
-                今回、あなたは<b>応答者（プレイヤー2）</b>の役割を担当します。<br><br>
-                次のページでは、あなたが受諾する<b>「最低の金額（MAO: Minimum Acceptable Offer）」</b>を入力していただきます。<br><br>
-                <ul>
-                    <li>提案者は0〜{{C.ENDOWMENT}}の間で分け前を提案してきます。</li>
-                    <li>もし提案額があなたの入力した最低金額<b>以上</b>であれば、提案通りの配分となります。</li>
-                    <li>もし提案額があなたの入力した最低金額<b>未満</b>であれば、両者とも0ポイントになります。</li>
-                </ul>
             </div>
             
             <div class="text-center mt-4">

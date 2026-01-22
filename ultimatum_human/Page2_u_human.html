@@ -6,11 +6,13 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>最低受諾額（MAO）の入力【対AI】</strong></h2>
+            <h2><strong>あなたが相手の提案を受け入れる最低ポイント(最低受諾額)の入力【対人間】</strong></h2>
         </div>
         <div class="card-body">
-            <div class="alert alert-warning">
-                <b>相手（提案者）は「{{ C.OPPONENT_TYPE }}」です。</b>
+            <div class="alert alert-info">
+                <b>今回のあなたの相手は「人間」です。</b><br>
+                <small>※実際にこの実験に参加している別の参加者と対戦します。</small>
+            </div>
             </div>
             <p>
                 あなたは<b>応答者（プレイヤー2）</b>です。<br>
@@ -18,9 +20,9 @@
             </p>
             
             <p>
-                <b>あなたが受諾する「最低の金額」を入力してください。</b><br>
-                もし提案額があなたの入力した額<b>以上</b>であれば、提案通りの配分となります。<br>
-                もし提案額があなたの入力した額<b>未満</b>であれば、両者とも0ポイントになります。
+                <b>あなたが相手の提案を受け入れる（受諾する）最低のポイントを入力してください。</b><br>
+                もし提案額があなたの入力したポイント<b>以上</b>であれば、提案通りの配分となります。<br>
+                もし提案額があなたの入力したポイント<b>未満</b>であれば、両者とも0ポイントになります。
             </p>
             
             <div class="row">
@@ -29,7 +31,7 @@
                 </div>
             </div>
             <p class="text-muted text-center mt-2">
-                <small>例：「3」と入力した場合、提案額が3ポイント以上なら受諾、2ポイント以下なら拒否となります。</small>
+                <small>例：「3」と入力した場合、相手の提案額が3ポイント以上なら受諾、2ポイント以下なら拒否となります。</small>
             </p>
             
             <div class="text-center mt-4">

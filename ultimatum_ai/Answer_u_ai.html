@@ -1,25 +1,20 @@
 {{ block title }}
-    結果の確認
+    正解と解説
 {{ endblock }}
 
 {{ block content }}
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>結果の確認【対AI】</strong></h2>
+            <h2><strong>正解と解説</strong></h2>
         </div>
         <div class="card-body">
-            <div class="alert alert-warning">
-                <b>相手は「{{ C.OPPONENT_TYPE }}」でした。</b>
+            <div class="p-4">
+                <h5 class="mb-3"><strong>正解：拒否される</strong></h5>
+                <p>最低受諾額が15ポイントに設定されている場合、提案額が12ポイント（15未満）なので自動的に拒否されます。<br>
+                最後通牒ゲームでは、提案額が最低受諾額を下回ると拒否され、両者とも0ポイントになります。</p>
             </div>
-            <p>
-                プレイヤー1に対して初期保有額として<b>{{C.ENDOWMENT}}</b>が渡されました。<br>
-                プレイヤー1はプレイヤー2に対して<b>{{player.proposal}} points</b>を渡すこととしました。<br>
-            </p>
 
-            <p>
-                その結果、あなたは<b>{{player.payoff}}</b>を獲得しました。
-            </p>
             <div class="text-center mt-4">
                 {{ next_button }}
             </div>

@@ -33,6 +33,16 @@ class Player(BasePlayer):
         max=C.ENDOWMENT
     )
     
+    # 理解度確認の問題（MAO=10、8の提案の場合）
+    comprehension_answer = models.StringField(
+        label='この提案は受諾されますか、拒否されますか？',
+        choices=[
+            ['受諾される', '受諾される'],
+            ['拒否される', '拒否される'],
+        ],
+        widget=widgets.RadioSelect
+    )
+    
     # 実際に選ばれた提案額（ランダムに決定）
     actual_offer = models.IntegerField()
     # その提案に対する応答者の回答（提案額 >= MAO なら受諾）
@@ -54,18 +64,27 @@ def compute(player: Player):
 
 
 # PAGES
-class Page1_u(Page):
+class Page1_u_human(Page):
     """説明ページ"""
     pass
 
 
-class Page2_u(Page):
+class Check_u_human(Page):
+    form_model = 'player'
+    form_fields = ['comprehension_answer']
+
+
+class Answer_u_human(Page):
+    pass
+
+
+class Page2_u_human(Page):
     """MAO入力ページ"""
     form_model = 'player'
     form_fields = ['mao']
 
 
-class Page3_u(Page):
+class Page3_u_human(Page):
     """回答確認ページ"""
     
     @staticmethod
@@ -86,7 +105,7 @@ class ResultsWaitPage(WaitPage):
             compute(player)
 
 
-class Page4_u(Page):
+class Page4_u_human(Page):
     """結果ページ"""
     
     @staticmethod
@@ -96,4 +115,4 @@ class Page4_u(Page):
         }
 
 
-page_sequence = [Page1_u, Page2_u, Page3_u, ResultsWaitPage, Page4_u]
+page_sequence = [Page1_u_human, Check_u_human, Answer_u_human, Page2_u_human, Page3_u_human, ResultsWaitPage, Page4_u_human]

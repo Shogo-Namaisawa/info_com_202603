@@ -6,18 +6,18 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>回答の確認【対AI】</strong></h2>
+            <h2><strong>回答の確認<【対AIエージェント】/strong></h2>
         </div>
         <div class="card-body">
             <div class="alert alert-warning">
-                <b>相手（提案者）は「{{ C.OPPONENT_TYPE }}」です。</b>
+                <b>今回のあなたの対戦相手は、大量の人間同士の対話データを学習したAIエージェントです。</b>
             </div>
             <p>
                 あなたの回答が記録されました。
             </p>
             
             <p>
-                <b>あなたが設定した最低受諾額（MAO）：</b>{{ player.mao }} ポイント
+                <b>あなたが相手の提案を受け入れる（受諾する）最低のポイント：</b>{{ player.mao }} ポイント
             </p>
             
             <p>
@@ -27,7 +27,7 @@
             </p>
             
             <p class="text-muted">
-                次のページでは、提案者の提案額がランダムに決定され、<br>
+                次のページでは、提案者の提案額と、<br>
                 あなたの最低受諾額に基づいて結果が計算されます。
             </p>
             

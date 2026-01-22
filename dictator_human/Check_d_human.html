@@ -1,0 +1,89 @@
+{{ block title }}
+    理解度確認
+{{ endblock }}
+
+{{ block content }}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            <h2><strong>理解度確認</strong></h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i>
+                <b>これはあなたの理解を確認するための質問です。</b><br>
+                <small>※ 誤答によるペナルティはありません。内容を正しく理解して実験に参加していただくための確認です。</small>
+            </div>
+
+            <div class="question-box mt-4 p-4 border rounded">
+                <h5 class="mb-3"><strong>確認問題：</strong></h5>
+                <p class="lead">
+                    あなたが<b>プレイヤー1</b>に割り振られ、初期保有額が<b>20ポイント</b>のとき、
+                    プレイヤー2に<b>13ポイント</b>を渡すことに決めました。<br>
+                    <u>この場合、あなた（プレイヤー1）の最終的な利得はいくらになりますか？</u>
+                </p>
+
+                <div class="mt-4">
+                    {{ formfields }}
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                {{ next_button }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: #003366 !important;
+    color: white !important;
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.card-header * {
+    color: white !important;
+}
+
+.question-box {
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6 !important;
+}
+
+.question-box .lead {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.btn-primary {
+    padding: 0.875rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
+}
+
+.alert-danger {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+</style>
+{{ endblock }}

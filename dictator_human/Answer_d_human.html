@@ -1,25 +1,20 @@
 {{ block title }}
-    分配額の決定
+    正解と解説
 {{ endblock }}
 
 {{ block content }}
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>分配額の決定【対AI】</strong></h2>
+            <h2><strong>正解と解説</strong></h2>
         </div>
         <div class="card-body">
-            <div class="alert alert-warning">
-                <b>相手は「{{ C.OPPONENT_TYPE }}」です。</b>
+            <div class="p-4">
+                <h5 class="mb-3"><strong>正解：7ポイント</strong></h5>
+                <p>計算式：20（初期保有） - 13（相手に渡す額） = 7ポイント<br>
+                プレイヤー1の利得は、初期保有額から分配した分を引いた額になります。</p>
             </div>
-            <p>
-                あなたは<b>プレイヤー1</b>に割り振られました。
-            </p>
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    {{ formfields }}
-                </div>
-            </div>
+
             <div class="text-center mt-4">
                 {{ next_button }}
             </div>

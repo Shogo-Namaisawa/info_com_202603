@@ -1,0 +1,56 @@
+{{ block title }}
+    正解と解説
+{{ endblock }}
+
+{{ block content }}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            <h2><strong>正解と解説</strong></h2>
+        </div>
+        <div class="card-body">
+            <div class="p-4">
+                <h5 class="mb-3"><strong>正解：拒否される</strong></h5>
+                <p>最低受諾額が10ポイントに設定されている場合、提案額が8ポイント（10未満）なので自動的に拒否されます。<br>
+                最後通牒ゲームでは、提案額が最低受諾額を下回ると拒否され、両者とも0ポイントになります。</p>
+            </div>
+
+            <div class="text-center mt-4">
+                {{ next_button }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: #003366 !important;
+    color: white !important;
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.card-header * {
+    color: white !important;
+}
+
+.btn-primary {
+    padding: 0.875rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
+}
+</style>
+{{ endblock }}

@@ -31,6 +31,18 @@ class Player(BasePlayer):
         max=20,
         label='プレイヤー2に渡す金額を入力してください（0〜20）'
     )
+    
+    # 理解度確認の問題（初期保有20、20渡した場合の自分の利得）
+    comprehension_answer = models.IntegerField(
+        label='あなたの利得（ポイント）',
+        choices=[
+            [0, '0ポイント'],
+            [5, '5ポイント'],
+            [13, '13ポイント'],
+            [20, '20ポイント'],
+        ],
+        widget=widgets.RadioSelect
+    )
 
 
 def compute(player: Player):
@@ -40,11 +52,20 @@ def compute(player: Player):
 
 
 # PAGES
-class Page1_d(Page):
+class Page1_d_ai(Page):
     pass
 
 
-class Page2_d(Page):
+class Check_d_ai(Page):
+    form_model = 'player'
+    form_fields = ['comprehension_answer']
+
+
+class Answer_d_ai(Page):
+    pass
+
+
+class Page2_d_ai(Page):
     form_model = 'player'
     form_fields = ['proposal']
 
@@ -59,8 +80,8 @@ class AlibiWaitPage(WaitPage):
             compute(player)
 
 
-class Page3_d(Page):
+class Page3_d_ai(Page):
     pass
 
 
-page_sequence = [Page1_d, Page2_d, AlibiWaitPage, Page3_d]
+page_sequence = [Page1_d_ai, Check_d_ai, Answer_d_ai, Page2_d_ai, AlibiWaitPage, Page3_d_ai]

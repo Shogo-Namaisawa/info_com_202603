@@ -1,0 +1,56 @@
+{{ block title }}
+    正解と解説
+{{ endblock }}
+
+{{ block content }}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            <h2><strong>正解と解説</strong></h2>
+        </div>
+        <div class="card-body">
+            <div class="p-4">
+                <h5 class="mb-3"><strong>正解：0ポイント</strong></h5>
+                <p>計算式：20（初期保有） - 20（相手に渡す額） = 0ポイント<br>
+                プレイヤー1の利得は、初期保有額から分配した分を引いた額になります。</p>
+            </div>
+
+            <div class="text-center mt-4">
+                {{ next_button }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: #003366 !important;
+    color: white !important;
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.card-header * {
+    color: white !important;
+}
+
+.btn-primary {
+    padding: 0.875rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.4);
+}
+</style>
+{{ endblock }}
