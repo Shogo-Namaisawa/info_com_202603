@@ -14,6 +14,55 @@ SESSION_CONFIGS = [
         app_sequence=['instruction', 'demographics', 'dictator_human', 'dictator_ai', 'ultimatum_human', 'ultimatum_ai', 'bigfive', 'closing'],
         num_demo_participants=1,
     ),
+    # テスト用の個別設定
+    dict(
+        name='instruction(テスト用)',
+        display_name='Instruction Test',
+        app_sequence=['instruction'],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='demographics(テスト用)',
+        display_name='Demographics Test',
+        app_sequence=['demographics'],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='bigfive(テスト用)',
+        display_name='BigFive Test',
+        app_sequence=['bigfive'],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='dictator_ai(テスト用)',
+        display_name='Dictator AI Test',
+        app_sequence=['dictator_ai'],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='dictator_human(テスト用)',
+        display_name='Dictator Human Test',
+        app_sequence=['dictator_human'],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='ultimatum_ai(テスト用)',
+        display_name='Ultimatum AI Test',
+        app_sequence=['ultimatum_ai'],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='ultimatum_human(テスト用)',
+        display_name='Ultimatum Human Test',
+        app_sequence=['ultimatum_human'],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='closing(テスト用)',
+        display_name='Closing Test',
+        app_sequence=['closing'],
+        num_demo_participants=1,
+    ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
