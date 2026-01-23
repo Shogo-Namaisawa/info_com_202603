@@ -5,7 +5,7 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h2><strong>ご自身の性格について当てはまる項目を選択してください</strong></h2>
+            <h2><strong>ご自身の性格について当てはまる項目を選択してください (1/2)</strong></h2>
         </div>
         <div class="card-body">
             <div class="alert alert-info mb-4">
@@ -15,7 +15,7 @@
             
             <div class="row">
                 <div class="col-md-10 offset-md-1">
-                    <!-- 因子がバラバラになるよう表示 -->
+                    <!-- 因子がバラバラになるよう固定順で表示（前半15問） -->
                     <div>{% formfield player.big5_E1 %}</div>
                     <div>{% formfield player.big5_N1 %}</div>
                     <div>{% formfield player.big5_O1 %}</div>
@@ -30,23 +30,7 @@
                     <div>{% formfield player.big5_N3 %}</div>
                     <div>{% formfield player.big5_O3 %}</div>
                     <div>{% formfield player.big5_C3_R %}</div>
-                    
-
                     <div>{% formfield player.big5_A3_R %}</div>
-                    <div>{% formfield player.big5_E4 %}</div>
-                    <div>{% formfield player.big5_N4 %}</div>
-                    <div>{% formfield player.big5_O4 %}</div>
-                    <div>{% formfield player.big5_C4 %}</div>
-                    <div>{% formfield player.big5_A4 %}</div>
-                    <div>{% formfield player.big5_E5 %}</div>
-                    <div>{% formfield player.big5_N5 %}</div>
-                    <div>{% formfield player.big5_O5 %}</div>
-                    <div>{% formfield player.big5_C5 %}</div>
-                    <div>{% formfield player.big5_A5 %}</div>
-                    <div>{% formfield player.big5_O6 %}</div>
-                    <div>{% formfield player.big5_C6_R %}</div>
-                    <div>{% formfield player.big5_A6_R %}</div>
-                    <div>{% formfield player.big5_C7 %}</div>
                 </div>
             </div>
             

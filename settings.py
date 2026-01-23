@@ -4,13 +4,13 @@ import dj_database_url
 SESSION_CONFIGS = [
     dict(
         name='former_game_sequence',
-        display_name='Former Game Sequence',
+        display_name='先にゲーム実験の後にBigFive',
         app_sequence=['instruction', 'demographics', 'bigfive', 'dictator_human', 'dictator_ai', 'ultimatum_human', 'ultimatum_ai', 'closing'],
         num_demo_participants=1,
     ),
     dict(
         name='latter_game_sequence',
-        display_name='Latter Game Sequence',
+        display_name='先にBigFiveの後にゲーム実験',
         app_sequence=['instruction', 'demographics', 'dictator_human', 'dictator_ai', 'ultimatum_human', 'ultimatum_ai', 'bigfive', 'closing'],
         num_demo_participants=1,
     ),
